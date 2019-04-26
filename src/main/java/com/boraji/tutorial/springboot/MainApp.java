@@ -5,19 +5,27 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+
 import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.boraji.tutorial.springboot.controller.HelloWorldController;
 
+@SuppressWarnings({ "deprecation", "deprecation" })
 @RestController
 @SpringBootApplication
-public class MainApp {
+public class MainApp  {
 	
 	@Autowired
 	private Environment env;
 	
 	private static final Logger LOGGER = LoggerFactory.getLogger(HelloWorldController.class);
+	
+	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+        return application.sources(MainApp.class);
+    }
+	
 	
    public static void main(String[] args) {
       SpringApplication.run(MainApp.class, args);

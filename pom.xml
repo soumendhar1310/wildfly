@@ -3,6 +3,9 @@
   <groupId>com.boraji.tutorial.springboot</groupId>
   <artifactId>spring-boot-hello-world-example</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  
+  <packaging>war</packaging>
+  
   <properties>
     <java.version>1.8</java.version>
   </properties>
@@ -28,6 +31,15 @@
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-web</artifactId>
+      
+       <exclusions>
+        <exclusion>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-tomcat</artifactId>
+        </exclusion>
+      </exclusions>
+      
+      
     </dependency>
     
     <dependency>
@@ -39,6 +51,23 @@
   </dependencies>
   <build>
     <plugins>
+    
+     <!-- This is needed so Wildfly can run a Java 10 application. -->
+      <!-- See https://jira.spring.io/browse/SPR-16990 -->
+      <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-war-plugin</artifactId>
+          <configuration>
+            <archive>
+                <manifestEntries>
+                    <Dependencies>jdk.unsupported</Dependencies>
+                </manifestEntries>
+            </archive>
+          </configuration>
+      </plugin>
+    
+    
+    
       <plugin>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>

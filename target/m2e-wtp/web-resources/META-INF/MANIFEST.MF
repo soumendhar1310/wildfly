@@ -8,4 +8,5 @@ Implementation-URL: http://projects.spring.io/spring-boot/spring-boot-
  hello-world-example/
 Created-By: Maven Integration for Eclipse
 Implementation-Vendor: Pivotal Software, Inc.
+Dependencies: jdk.unsupported
 
