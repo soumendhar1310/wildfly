@@ -17,10 +17,10 @@ import com.boraji.tutorial.springboot.controller.HelloWorldController;
 @SpringBootApplication
 public class MainApp  {
 	
-	@Autowired
+	/*@Autowired
 	private Environment env;
 	
-	private static final Logger LOGGER = LoggerFactory.getLogger(HelloWorldController.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(HelloWorldController.class);*/
 	
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
         return application.sources(MainApp.class);
