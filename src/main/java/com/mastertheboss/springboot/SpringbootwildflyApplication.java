@@ -1,4 +1,4 @@
-package com.boraji.tutorial.springboot;
+package com.mastertheboss.springboot;
  
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -28,6 +28,7 @@ public class SpringbootwildflyApplication extends SpringBootServletInitializer {
     private static Class<SpringbootwildflyApplication> applicationClass = SpringbootwildflyApplication.class;
 }
   
+
 @RestController
 class HelloController {
   
